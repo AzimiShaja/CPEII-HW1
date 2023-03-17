@@ -24,3 +24,11 @@ T . he player with the highest score wins.
     . Compile and run the DiceGame.java file in the command line or an IDE of your choice.
 
 Enjoy playing!
+
+# Author 
+SHJA AZIMI
+
+
+# Other
+An acknowledgement ought to be given to Anas Bashir for his endeavors in rectifying and improving the subject matter. 
+@an4s911
