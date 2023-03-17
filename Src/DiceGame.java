@@ -68,7 +68,7 @@ public class DiceGame {
                         break;
                     } else {
                         playerTurnScore += rollSum; // summing up the points
-                        System.out.println("this gives a turn total of " + playerTurnScore);
+                        System.out.println("this gives you a turn total of " + playerTurnScore);
                         System.out.println("and a grand total of " + playerTurnScore);
                         System.out.println("Do you want to continue rolling? 'y' or 'n'");
                         answer = input.nextLine().charAt(0); // ask user Whether continue or not?
