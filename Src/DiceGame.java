@@ -70,7 +70,7 @@ public class DiceGame {
                     } else {
                         playerTurnScore += rollSum; // summing up the points
                         System.out.println("this gives you a turn total of " + playerTurnScore);
-                        System.out.println("and a grand total of " + playerTurnScore);
+                        System.out.println("and a grand total of " + (playerScore + playerTurnScore));
                         System.out.println("Do you want to continue rolling? 'y' or 'n'");
                         answer = input.nextLine().charAt(0); // ask user Whether continue or not?
                     }
@@ -108,7 +108,7 @@ public class DiceGame {
                     } else {
                         computerTurnScore += rollSum; // summing up the points
                         System.out.println("This gives me a turn total of: " + computerTurnScore);
-                        System.out.println("and a grand total of " + computerTurnScore);
+                        System.out.println("and a grand total of " + (computerScore + computerTurnScore));
                     }
                 }
                 computerScore += computerTurnScore; // Add the player's turn score to their total score
