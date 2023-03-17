@@ -49,7 +49,8 @@ public class DiceGame {
                     dice.roll(); // roll the dice
                     System.out.println("You're rolling....");
                     System.out.println("You rolled: " + dice);
-                    int rollSum = dice.getDie1() + dice.getDie2(); // get the sum of pairOfDice
+                  
+                    int rollSum = dice.getDiceSum(); // get the sum of pairOfDice
 
                     // If the player rolls two ones
                     if (dice.getDie1() == 1 && dice.getDie2() == 1) {
@@ -90,8 +91,7 @@ public class DiceGame {
                     dice.roll();
                     System.out.println("I'm rolling...");
                     System.out.println("I rolled: " + dice);
-                    int rollSum = dice.getDie1() + dice.getDie2();
-
+                    int rollSum = dice.getDiceSum();
                     // If the computer rolls two ones
                     if (dice.getDie1() == 1 && dice.getDie2() == 1) {
                         System.out.println("I rolled two 1's...\nyour turn is over.");
