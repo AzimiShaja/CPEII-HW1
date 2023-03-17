@@ -8,18 +8,19 @@ The computer plays by the same rules as the player, except it will always turn o
 
 # How to Play
 
-    The game will start by printing the welcome message and rules.
-    The player will be prompted to input 'y' when ready to start playing.
-    The player will roll the dice and get a score based on the sum of the dice. The score will be added to their turn score.
-    If the player rolls a 1, their turn ends, and they lose their accumulated points in that turn.
-    The player can choose to continue rolling or turn over the dice.
-    If the player chooses to turn over the dice or rolls two 1's, their turn ends, and their turn score is added to their total score.
-    The game continues until one of the players scores 100 points.
-    The player with the highest score wins.
+  . The game will start by printing the welcome message and rules.
+  . The player will be prompted to input 'y' when ready to start playing.
+  . The player will roll the dice and get a score based on the sum of the dice. The score will be added to their turn score.
+  . If the player rolls a 1, their turn ends, and they lose their accumulated points in that turn.
+  . The player can choose to continue rolling or turn over the dice.
+  . If the player chooses to turn over the dice or rolls two 1's, their turn ends, and their turn score is added to their total score.
+  . The game continues until one of the players scores 100 points.
+T . he player with the highest score wins.
 
 # How to Run
 
-    Clone the repository or download the source code.
-    Compile and run the DiceGame.java file in the command line or an IDE of your choice.
+    . The Code contains 3 classes , Die.java , PairOfDice , and test classes or driver whether my dice is working or not.
+    . Clone the repository or download the source code.
+    . Compile and run the DiceGame.java file in the command line or an IDE of your choice.
 
 Enjoy playing!
