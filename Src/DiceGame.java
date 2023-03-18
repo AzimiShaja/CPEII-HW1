@@ -24,13 +24,13 @@ public class DiceGame {
         System.out.println("---------------------------------");
         System.out.println("you will be playing against computer!\n");
         System.out.println("Rules: \n");
-        System.out.println(
-                """
-                        The first player to get 100 points Wins. However, if you roll one 1, you lose all point you have accumulated in your turn.
-                        If you roll two 1's you lose all your points. You can turn the dice over at any time. However, if you roll one or two 1's, you lose your turn.
-                        I (the computer) play by the same rules, except I'll always turn over the dice when I've rolled 20 or more points in a single turn""");
-        System.out.println(
-                "-------------------------------------------------------------------------------------------\n");
+        System.out.println("The first player to get 100 points Wins.\n" +
+                "However, if you roll one 1, you lose all point you have accumulated in your turn.\n" +
+                "If you roll two 1's you lose all your points. You can turn the dice over at any time.\n " +
+                "However, if you roll one or two 1's, you lose your turn.\n" +
+                "I (the computer) play by the same rules, \n" +
+                "except I'll always turn over the dice when I've rolled 20 or more points in a single turn");
+        System.out.println("-----------------------------------------------------------\n");
 
         DiceTurn(dice); // Calling the 'DiceTurn' Method
     }
