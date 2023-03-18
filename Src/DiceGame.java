@@ -1,35 +1,46 @@
-package Src;
+import java.util.Scanner;
 
-import java.util.Scanner; /*A simple text scanner which can parse 
-                          primitive types and strings using regular expressions.*/
-
+/**
+ * The DiceGame class implements a game where the user plays against the
+ * computer to reach a score of 100 points first.
+ * The game is played using a pair of dice and there are several rules governing
+ * how points are scored and when a turn ends.
+ */
 public class DiceGame {
-    static Scanner input = new Scanner(System.in); // java Scanner class
+    // Initialize a Scanner object to read user input
+    static Scanner input = new Scanner(System.in);
 
-    public static void main(String[] args) { // MAIN METHOD / Driver
-
+    /**
+     * The main method is responsible for starting the game and printing out the
+     * rules.
+     * 
+     * @param args command-line arguments, not used in this implementation
+     */
+    public static void main(String[] args) {
         PairOfDice dice = new PairOfDice(); // Create a pairOfDice Object
-        // Print the welcome Messege and Rules.
+        // Print the welcome Message and Rules.
         System.out.println("---------------------------------");
         System.out.println("    Welcome to the Dice Game!");
         System.out.println("---------------------------------");
         System.out.println("you will be playing against computer!\n");
         System.out.println("Rules: \n");
-        System.out.println("The first player to get 100 points Wins." +
-                " However, if you roll one 1, you lose all point you have accumulated in your turn.\n" +
-                "If you roll two 1's you lose all your points." + " You can turn the dice over at any time."
-                + " However, if you roll one or two 1's, you lose your turn.\n"
-                + "I (the computer) play by the same rules, "
-                + "except I'll always turn over the dice when I've rolled 20 or more points in a single turn");
+        System.out.println(
+                """
+                        The first player to get 100 points Wins. However, if you roll one 1, you lose all point you have accumulated in your turn.
+                        If you roll two 1's you lose all your points. You can turn the dice over at any time. However, if you roll one or two 1's, you lose your turn.
+                        I (the computer) play by the same rules, except I'll always turn over the dice when I've rolled 20 or more points in a single turn""");
         System.out.println(
                 "-------------------------------------------------------------------------------------------\n");
 
         DiceTurn(dice); // Calling the 'DiceTurn' Method
     }
 
-    // ------------------
-    // METHOD:
-
+    /**
+     * The DiceTurn method is responsible for running a single turn of the game,
+     * alternating between the player and the computer.
+     * 
+     * @param dice a PairOfDice object representing the dice to be used in the game
+     */
     public static void DiceTurn(PairOfDice dice) {
         int playerScore = 0; // initialize the player score to 0
         int playerTurnScore = 0; // initialize the player turn score to 0
@@ -49,7 +60,6 @@ public class DiceGame {
                     dice.roll(); // roll the dice
                     System.out.println("You're rolling....");
                     System.out.println("You rolled: " + dice);
-                  
                     int rollSum = dice.getDiceSum(); // get the sum of pairOfDice
 
                     // If the player rolls two ones
@@ -65,12 +75,16 @@ public class DiceGame {
                         }
                     }
 
-                    // If the player rolls one one
+                    // If the player rolls one
                     if (dice.getDie1() == 1 || dice.getDie2() == 1) {
-                        System.out.println("You rolled a 1.\nYour turn is over.");
+                        System.out.println("You rolled one 1...\nYour turn is over.");
                         System.out.println("You lost all your points for this turn");
                         playerTurnScore = 0;
-                        break;
+                        System.out.println("Continue? (type 'y' to turn the dice over to me:)");
+                        char response = input.nextLine().charAt(0);
+                        if (response == 'y') {
+                            break;
+                        }
                     } else {
                         playerTurnScore += rollSum; // summing up the points
                         System.out.println("this gives you a turn total of " + playerTurnScore);
@@ -96,21 +110,18 @@ public class DiceGame {
                     System.out.println("I'm rolling...");
                     System.out.println("I rolled: " + dice);
                     int rollSum = dice.getDiceSum();
+
                     // If the computer rolls two ones
                     if (dice.getDie1() == 1 && dice.getDie2() == 1) {
                         System.out.println("I rolled two 1's...\nyour turn is over.");
                         System.out.println("I lost all your points so far");
                         computerTurnScore = 0;
                         computerScore = 0;
-                         System.out.println("Continue? (type 'y' to turn the dice over to me:)");
-                        char response = input.nextLine().charAt(0);
-                        if (response == 'y') {
-                            break;
-                        }
+                        break;
                     }
 
                     if (dice.getDie1() == 1 || dice.getDie2() == 1) {
-                        System.out.println("I got one 1...\nI lost all my points for this turn");
+                        System.out.println("I rolled one 1...\nI lost all my points for this turn");
                         computerTurnScore = 0;
                         break;
                     } else {
@@ -131,12 +142,11 @@ public class DiceGame {
 
         // Check the Winner
         if (playerScore >= 100) {
-            System.out.println("\n                         ----------------------------");
-            System.out.println("                          Congratulations! You won!!"); // User wins
-            System.out.println("                         ----------------------------");
+            System.out.println("\n----------------------------");
+            System.out.println("Congratulations! You won!!"); // User wins
+            System.out.println("----------------------------");
         } else {
             System.out.println("Better Luck Next Time!"); // Computer wins
         }
     }
-
 }
