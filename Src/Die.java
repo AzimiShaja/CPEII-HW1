@@ -1,6 +1,7 @@
 import java.util.Random;
 
-/**
+/** 
+ 
  * The Die class represents a standard six-sided die
  * that can be rolled and have
  * its face value set or retrieved.
