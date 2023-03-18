@@ -58,7 +58,11 @@ public class DiceGame {
                         System.out.println("You lost all your points so far");
                         playerTurnScore = 0;
                         playerScore = 0; // Player score is reset to 0
-                        break; // exit the loop
+                        System.out.println("Continue? (type 'y' to turn the dice over to me:)");
+                        char response = input.nextLine().charAt(0);
+                        if (response == 'y') {
+                            break;
+                        }
                     }
 
                     // If the player rolls one one
@@ -98,7 +102,11 @@ public class DiceGame {
                         System.out.println("I lost all your points so far");
                         computerTurnScore = 0;
                         computerScore = 0;
-                        break;
+                         System.out.println("Continue? (type 'y' to turn the dice over to me:)");
+                        char response = input.nextLine().charAt(0);
+                        if (response == 'y') {
+                            break;
+                        }
                     }
 
                     if (dice.getDie1() == 1 || dice.getDie2() == 1) {
