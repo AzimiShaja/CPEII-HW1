@@ -48,7 +48,7 @@ public class Die {
      * @return a string representation of the die's face value
      */
     public String toString() {
-        return Integer.toString(faceValue);
+        return " " + faceValue;
     }
 
     /**
