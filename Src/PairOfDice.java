@@ -90,7 +90,20 @@ public class PairOfDice {
      * @return true if the two pairs of dice have the same face values, false
      *         otherwise
      */
-    public boolean equals(PairOfDice other) {
-        return die1.equals(other.die1) && die2.equals(other.die2);
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        PairOfDice other = (PairOfDice) obj;
+        if (!(die1.equals(other.die1))) {
+            return false;
+        }
+        return die2.equals(other.die2);
     }
 }
