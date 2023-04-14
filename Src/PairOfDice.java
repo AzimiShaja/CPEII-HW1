@@ -37,8 +37,8 @@ public class PairOfDice {
      * 
      * @return the face value of the first die
      */
-    public int getDie1() {
-        return die1.getFaceValue();
+    public Die getDie1() {
+        return new Die(die1);
     }
 
     /**
@@ -47,8 +47,8 @@ public class PairOfDice {
      * 
      * @param value the value to set the face value of the first die to
      */
-    public void setDie1(int value) {
-        die1.setFaceValue(value);
+    public void setDie1(Die die1) {
+        this.die1 = new Die(die1);
     }
 
     /**
@@ -57,8 +57,8 @@ public class PairOfDice {
      * 
      * @return the face value of the second die
      */
-    public int getDie2() {
-        return die2.getFaceValue();
+    public Die getDie2() {
+        return new Die(die2);
     }
 
     /**
@@ -67,8 +67,8 @@ public class PairOfDice {
      * 
      * @param value the value to set the face value of the second die to
      */
-    public void setDie2(int value) {
-        die2.setFaceValue(value);
+    public void setDie2(Die die2) {
+        this.die2 = new Die(die2);
     }
 
     /**
